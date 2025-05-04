@@ -8,7 +8,7 @@ RUN cd frontend && npm install && npm run build
 FROM node:22-alpine
 WORKDIR /app
 COPY ../backend ./backend
-RUN cd frontend && npm install
+RUN cd backend && npm install
 
 EXPOSE 5000
 CMD ["node", "server.js"]

@@ -1,19 +1,21 @@
 version: "3.8"
 
 services:
-  frontend-backend:
+  journal-app-fullstack-rag:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     depends_on:
-      - microservice-rag
+      - journal-app-microservice-rag
+    image: ${{secrets.DOCKER_USERNAME}}/journal-app-fullstack-rag:latest
 
-  microservice-rag:
+  journal-app-microservice-rag:
     build:
       context: ./microservice
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    image: ${{secrets.DOCKER_USERNAME}}/journal-app-microservice-rag:latest
 

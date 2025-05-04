@@ -1,4 +1,4 @@
-# 📔 Journal Journey - AI-Powered Reflective Journal
+# 📝 Journal Journey - AI-Powered Reflective Journal
 
 | Dark Theme | Light Theme |
 | ------ | ------ |
@@ -76,7 +76,7 @@ J --> K[Contextual Answer]
    * App.jsx under ./src
         * For development BASE_URL, set VITE_BASE_URL = http://127.0.0.1:5000 under .env in the frontend root folder
         * For Vite, import statement: import.meta.env.VITE_BASE_URL
-        * For production BASE_URL, set VITE_BASE_URL = https://repo-name.onrender.com under environmental variables on gh-pages and Render 
+        * For production BASE_URL, set VITE_BASE_URL = https://repo-name.onrender.com under environmental variables on Render 
     
     ```bash
     npm install
