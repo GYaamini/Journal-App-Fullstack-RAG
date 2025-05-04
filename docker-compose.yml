@@ -9,7 +9,7 @@ services:
       - "5000:5000"
     depends_on:
       - journal-app-microservice-rag
-    image: ${{secrets.DOCKER_USERNAME}}/journal-app-fullstack-rag:latest
+    image: ${DOCKER_USERNAME}/journal-app-fullstack-rag:latest
 
   journal-app-microservice-rag:
     build:
@@ -17,5 +17,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    image: ${{secrets.DOCKER_USERNAME}}/journal-app-microservice-rag:latest
+    image: ${DOCKER_USERNAME}/journal-app-microservice-rag:latest
 
