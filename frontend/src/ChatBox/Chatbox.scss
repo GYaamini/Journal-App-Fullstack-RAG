@@ -1,0 +1,239 @@
+@use '../colors';
+
+body {
+    .chat-window {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 400px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px colors.$journal-background-light;
+        background-color: colors.$main-background-dark;
+        color: colors.$font-color-dark;
+
+        .chat-header {
+            display: flex;
+            padding: 10px;
+            height: 30px;
+            font-size: larger;
+            font-weight: 600;
+            justify-content: space-between;
+            align-items: center;
+            background-color: colors.$nav-background-color;
+            color: colors.$font-color-nav-dark;
+
+            .close-chat {
+                background-color: colors.$nav-background-color;
+            }
+        }
+
+        .chat-content {
+            display: block;
+            height: calc(100% - 75px);
+            margin-bottom: 1rem;
+
+            .chat-area {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                height: 80%;
+                margin-bottom: 1rem;
+                padding: 20px;
+                overflow: auto;
+                scrollbar-width: none;
+
+                @media screen and (max-width: 800px) {
+                    height: 78%;
+                }
+
+                @media screen and (max-width: 500px) {
+                    height: 75%;
+                }
+
+                .loading-dots {
+                    padding: 12px;
+                    word-break: break-word;
+                    border-radius: 15px;
+                    position: relative;
+                    background-color: darken(colors.$nav-background-color, 10%);
+                    min-width: 26px;
+                    border-top-left-radius: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: baseline;
+                    width: fit-content;
+                
+                    .dot {
+                        width: 7px;
+                        height: 7px;
+                        margin: 0 2px;
+                        border-radius: 50%;
+                        animation: bounce 1.0s ease-in-out infinite;
+                        background: #919191;
+                    }
+
+                    .dot:nth-of-type(1) {
+                        margin-left: 5px;
+                        animation-delay: 0s;
+                    }
+
+                    .dot:nth-of-type(2) {
+                        animation-delay: 0.2s;
+                    }
+
+                    .dot:nth-of-type(3) {
+                        animation-delay: 0.4s;
+                    }
+
+                    @keyframes bounce {
+
+                        0%,
+                        40%,
+                        100% {
+                            transform: translateY(0);
+                        }
+
+                        20% {
+                            transform: translateY(-10px);
+                        }
+                    }
+                }
+
+                .chat-message {
+                    margin: 5px 0;
+                    padding: 8px 12px;
+                    border-radius: 10px;
+                    max-width: 80%;
+                }
+
+                .chat-message.botResponse {
+                    align-self: flex-start;
+                    display: inline-block;
+                    text-align: left;
+                    background-color: darken(colors.$nav-background-color, 10%);
+                    color: colors.$font-color-dark;
+                }
+
+                .chat-message.userQuery {
+                    align-self: flex-end;
+                    text-align: left;
+                    background-color: darken(colors.$font-color-nav-dark, 40%);
+                    color: colors.$font-color-dark;
+                }
+            }
+
+            .input-area {
+                display: flex;
+                flex-direction: row;
+                gap: 1;
+                width: 90%;
+                height: 10%;
+                justify-self: center;
+                justify-content: center;
+
+                .query-input {
+                    width: 80%;
+                    font-size: medium;
+                    font-family: Arial, Helvetica, sans-serif;
+                    overflow: auto;
+                    scrollbar-width: none;
+                    background-color: colors.$main-background-dark;
+                    color: colors.$font-color-dark;
+                }
+
+                .query {
+                    background-color: colors.$nav-background-color;
+                    border-radius: 1%;
+                }
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 300px;
+            height: 400px;
+            font-size: small;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 200px;
+            height: 300px;
+            font-size: smaller;
+        }
+    }
+
+    .toggle-chat {
+        position: sticky;
+        background-color: colors.$nav-background-color;
+        border-radius: 45%;
+        outline: none;
+        justify-items: center;
+        bottom: 2rem;
+        margin-bottom: auto;
+
+        &:hover{
+            background-color: lighten(colors.$nav-background-color, 10%);
+        }
+    }
+}
+
+body.light {
+    .chat-window {
+        box-shadow: 0 0 10px 5px colors.$journal-background-dark;
+        background-color: colors.$main-background-light;
+        color: colors.$font-color-dark;
+
+        .chat-header {
+            background-color: colors.$nav-background-color;
+            color: colors.$font-color-nav-light;
+
+            .close-chat {
+                background-color: colors.$nav-background-color;
+            }
+        }
+
+        .chat-content {
+            .chat-area {
+                .loading-dots {
+                    background-color: darken(colors.$main-background-light, 15%);
+
+                    .dot {
+                        background: #5a5a5a;
+                    }
+                }
+
+                .chat-message.botResponse {
+                    background-color: darken(colors.$main-background-light, 15%);
+                    color: colors.$font-color-light;
+                }
+
+                .chat-message.userQuery {
+                    background-color: colors.$font-color-nav-light;
+                    color: colors.$font-color-light;
+                }
+            }
+
+            .input-area {
+                .query-input {
+                    background-color: colors.$main-background-light;
+                    color: colors.$font-color-light;
+                }
+
+                .query {
+                    background-color: colors.$nav-background-color;
+                    border-radius: 1%;
+                }
+            }
+        }
+    }
+
+    .toggle-chat {
+        background-color: colors.$nav-background-color;
+
+        &:hover {
+            background-color: lighten(colors.$nav-background-color, 10%);
+        }
+    }
+}

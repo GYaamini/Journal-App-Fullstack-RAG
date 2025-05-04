@@ -1,0 +1,70 @@
+@use '../colors';
+
+.nav-to-view {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.journal-row {
+    gap: 1rem;
+    width: 100%;
+
+    .journal-entry {
+        padding: 15px;
+        margin-bottom: 2rem;
+        color: colors.$font-color-dark;
+        background-color: darken(colors.$nav-background-color, 13%);
+        text-align: left;
+        width: 100%;
+        max-height: 220px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        overflow: auto;
+        scrollbar-width: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 0 5px 2px colors.$journal-background-light;
+
+        &:hover {
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px 5px lighten(colors.$journal-background-light, 5%);
+        }
+
+        .journal-entry-body {
+            white-space: pre-wrap;
+        }
+    }
+
+    .journal-manipulate{
+        display: flex;
+        flex-direction: column;
+        button, a {
+            margin-top: 1rem;
+            outline: none;
+            background-color: colors.$main-background-dark;
+            color: colors.$font-color-dark;
+        }
+    }
+}
+
+body.light {
+    .journal-row{
+        .journal-entry {
+            color: colors.$font-color-light;
+            background-color: darken(colors.$main-background-light, 10%);
+            box-shadow: 0 0 7px 4px colors.$journal-background-dark;
+
+            &:hover {
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: 0 0 23px 8px darken(colors.$journal-background-dark, 5%);
+            }
+        }
+
+        .journal-manipulate{
+            button, a {
+                background-color: colors.$main-background-light;
+                color: colors.$font-color-light;
+            }
+        } 
+    }
+}

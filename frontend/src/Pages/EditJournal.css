@@ -1,0 +1,163 @@
+body {
+  background-color: #1c2420;
+  color: #D1E8E2;
+}
+body .journal-edit {
+  display: flex;
+  flex-direction: column;
+  background-color: #1c2420;
+  color: #D1E8E2;
+  border-radius: 8px;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+body .journal-edit .journal-form {
+  display: block;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0c5c5e transparent;
+}
+body .journal-edit .journal-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+body .journal-edit .journal-form form .form-group {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 1200px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  body .journal-edit .journal-form form .form-group {
+    width: 800px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body .journal-edit .journal-form form .form-group {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .journal-edit .journal-form form .form-group {
+    width: 300px;
+  }
+}
+body .journal-edit .journal-form form label {
+  font-weight: bold;
+  min-width: 80px;
+}
+body .journal-edit .journal-form form input,
+body .journal-edit .journal-form form textarea {
+  padding: 0.75rem;
+  width: 100%;
+  min-width: 200px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: rgb(50.3125, 64.6875, 57.5);
+  color: #D1E8E2;
+}
+body .journal-edit .journal-form form textarea {
+  height: 500px;
+}
+body .journal-edit .journal-form form #date {
+  color: #D1E8E2;
+}
+body .journal-edit .journal-form form .tag-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: rgb(50.3125, 64.6875, 57.5);
+  color: #D1E8E2;
+}
+body .journal-edit .journal-form form .tag-button {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  background-color: #1c2420;
+  align-items: center;
+}
+body .journal-edit .journal-form form .tag-button:hover {
+  background-color: rgb(39.15625, 50.34375, 44.75);
+}
+body .journal-edit .journal-form form .form-submit {
+  display: flex;
+  width: 1200px;
+  align-content: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  body .journal-edit .journal-form form .form-submit {
+    width: 800px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body .journal-edit .journal-form form .form-submit {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .journal-edit .journal-form form .form-submit {
+    width: 300px;
+  }
+}
+body .journal-edit .journal-form form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #2C3531;
+  color: #D1E8E2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+body .journal-edit .journal-form form button:hover {
+  background-color: rgb(55.5670103093, 66.9329896907, 61.881443299);
+}
+
+body.light {
+  background-color: #D1E8E2;
+  color: #2C3531;
+}
+body.light .journal-edit {
+  background-color: #D1E8E2;
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form input, body.light .journal-edit .journal-form form textarea {
+  background-color: rgb(175, 215, 204.5652173913);
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form #date {
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form .tag-inputs {
+  background-color: rgb(175, 215, 204.5652173913);
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form .tag-button {
+  background-color: #D1E8E2;
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form button {
+  background-color: rgb(141, 198, 183.1304347826);
+  color: #2C3531;
+}
+body.light .journal-edit .journal-form form button:hover {
+  background-color: rgb(158, 206.5, 193.847826087);
+}

@@ -1,0 +1,146 @@
+@mixin form-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    align-items: center;
+    justify-content: center;
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-start;
+        gap: 1rem;
+        width: 1200px;
+        overflow: hidden;
+
+        @media screen and (max-width: 1200px) {
+            width: 800px;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 500px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 300px;
+        }
+    }
+
+    label {
+        font-weight: bold;
+        min-width: 80px;
+    }
+    
+    input,
+    textarea {
+        padding: 0.75rem;
+        width: 100%;
+        min-width: 200px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        background-color: lighten(colors.$main-background-dark, 10%);
+        color: colors.$font-color-dark;
+    }
+
+    textarea {
+        height: 500px;
+    }
+
+    #date {
+        color: colors.$font-color-dark;
+    }
+
+    .tag-inputs {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        background-color: lighten(colors.$main-background-dark, 10%);
+        color: colors.$font-color-dark;
+    }
+
+    .tag-button {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.2rem;
+        background-color: colors.$main-background-dark;
+        align-items: center;
+
+        &:hover {
+                background-color: lighten(colors.$main-background-dark, 5%);
+            }
+    }
+
+    .form-submit {
+        display: flex;
+        width: 1200px;
+        align-content: flex-end;
+        justify-content: flex-end;
+        overflow: hidden;
+
+        @media screen and (max-width: 1200px) {
+            width: 800px;
+        }
+        
+        @media screen and (max-width: 800px) {
+            width: 500px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 300px;
+        }
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background-color: colors.$font-color-light;
+        color: colors.$font-color-dark;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(colors.$font-color-light, 5%);
+        }
+    }
+}
+
+@mixin form-light {
+    input, textarea {
+        background-color: darken(colors.$main-background-light, 10%);
+        color: colors.$font-color-light;
+    }
+
+    #date {
+        color: colors.$font-color-light;
+    }
+
+    .tag-inputs {
+        background-color: darken(colors.$main-background-light, 10%);
+        color: colors.$font-color-light;
+    }
+
+    .tag-button {
+        background-color: colors.$main-background-light;
+        color: colors.$font-color-light;
+    }
+
+    button {
+        background-color: darken(colors.$font-color-dark, 20%);
+        color: colors.$font-color-light;
+
+        &:hover {
+            background-color: darken(colors.$font-color-dark, 15%);
+        }
+    }
+}

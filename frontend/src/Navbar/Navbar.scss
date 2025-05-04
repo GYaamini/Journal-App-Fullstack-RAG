@@ -1,0 +1,45 @@
+@use '../colors';
+
+.navbar {
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    justify-content: center;
+    gap: 40%;
+    padding: 1rem;
+    align-items: center;
+    padding: 0 1rem;
+    height: 60px;
+    background-color: colors.$nav-background-color;
+
+    .nav-links {
+        display: flex;
+        gap: 30%;
+        color: colors.$font-color-dark;
+    }
+
+    button {
+        outline: none;
+        color: colors.$font-color-nav-dark;
+        background-color: colors.$nav-background-color;
+    }
+
+    a {
+        font-size: larger;
+        color: colors.$font-color-nav-dark;
+    }
+}
+
+body.light {
+    .navbar {
+        button {
+            color: colors.$font-color-nav-light;
+        }
+
+        a {
+            color: colors.$font-color-nav-light;
+        }
+    }
+}

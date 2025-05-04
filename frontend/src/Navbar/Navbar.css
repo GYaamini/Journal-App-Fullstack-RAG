@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  justify-content: center;
+  gap: 40%;
+  padding: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+  height: 60px;
+  background-color: #116466;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 30%;
+  color: #D1E8E2;
+}
+.navbar button {
+  outline: none;
+  color: #D9B08C;
+  background-color: #116466;
+}
+.navbar a {
+  font-size: larger;
+  color: #D9B08C;
+}
+
+body.light .navbar button {
+  color: #FFCB9A;
+}
+body.light .navbar a {
+  color: #FFCB9A;
+}

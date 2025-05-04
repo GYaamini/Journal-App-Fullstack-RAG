@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+jinja2
+langchain
+langchain-community
+chromadb
+pypdf
+python-dotenv
+pydantic
+pandas
+numpy
+sentence-transformers
+InstructorEmbedding
+p4python

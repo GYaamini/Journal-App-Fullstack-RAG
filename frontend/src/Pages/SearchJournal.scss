@@ -1,0 +1,124 @@
+@use '../colors';
+@import '../formdata';
+@import '../chatbox';
+
+.search {
+    height: 100vh;
+    width: 100%;
+    .search-page {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        max-width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .search-container {
+            flex: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 2rem;
+            height: 50px;
+            width: 100%;
+    
+            form {
+                @include form-dark;
+                margin-bottom: 0;
+                .form-group {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 900px;
+
+                    @media screen and (max-width: 1000px) {
+                        width: 600px;
+                    }
+                
+                    @media screen and (max-width: 700px) {
+                        .tag-inputs {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        width: 200px;
+                    }
+                }
+                .tag-inputs {
+                    width: 100%;
+                }
+                .form-submit {
+                    border-radius: 4px;
+                    align-items: center;
+                    justify-content: center;
+                    width: fit-content;
+                }
+            }
+
+            .search-refresh {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+                height: 60px;
+                background-color: colors.$font-color-light;
+                color: colors.$font-color-dark;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            
+                &:hover {
+                    background-color: lighten(colors.$font-color-light, 5%);
+                }
+            }
+        }
+    
+        .journal-container {
+            display: flex;
+            flex-direction: row;
+            padding-top: 3rem;
+            height: 100vh;
+            margin-bottom: 1rem;
+
+            .journalList-container {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                padding: 3rem 2rem 3rem 5rem;
+                margin-bottom: 4rem;
+                border-radius: 8px;
+                overflow: auto;
+                scrollbar-width: none;
+            }
+
+            .chat-box {
+                @include chatbox-dark;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+body.light {
+    .search {
+        .search-container {
+            form {
+                @include form-light;
+            }
+            .search-refresh, button {
+                background-color: darken(colors.$font-color-dark, 20%);
+                color: colors.$font-color-light;
+            
+                &:hover {
+                    background-color: darken(colors.$font-color-dark, 15%);
+                }
+            }
+        }
+
+        .journal-container {
+            .chat-box {
+                @include chatbox-light;
+            }
+        }
+    }
+}

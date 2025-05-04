@@ -1,0 +1,56 @@
+.nav-to-view {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.journal-row {
+  gap: 1rem;
+  width: 100%;
+}
+.journal-row .journal-entry {
+  padding: 15px;
+  margin-bottom: 2rem;
+  color: #D1E8E2;
+  background-color: rgb(7.5285714286, 44.2857142857, 45.1714285714);
+  text-align: left;
+  width: 100%;
+  max-height: 220px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  scrollbar-width: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 5px 2px #FFCB9A;
+}
+.journal-row .journal-entry:hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 20px 5px rgb(255, 216.1287128713, 179.5);
+}
+.journal-row .journal-entry .journal-entry-body {
+  white-space: pre-wrap;
+}
+.journal-row .journal-manipulate {
+  display: flex;
+  flex-direction: column;
+}
+.journal-row .journal-manipulate button, .journal-row .journal-manipulate a {
+  margin-top: 1rem;
+  outline: none;
+  background-color: #1c2420;
+  color: #D1E8E2;
+}
+
+body.light .journal-row .journal-entry {
+  color: #2C3531;
+  background-color: rgb(175, 215, 204.5652173913);
+  box-shadow: 0 0 7px 4px #955924;
+}
+body.light .journal-row .journal-entry:hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 23px 8px rgb(128.4621621622, 76.7324324324, 31.0378378378);
+}
+body.light .journal-row .journal-manipulate button, body.light .journal-row .journal-manipulate a {
+  background-color: #D1E8E2;
+  color: #2C3531;
+}

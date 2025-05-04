@@ -1,0 +1,45 @@
+@use '../colors';
+@import '../formdata';
+
+body {
+    background-color: colors.$main-background-dark;
+    color: colors.$font-color-dark;
+
+    .journal-create {
+        display: flex;
+        flex-direction: column;
+        background-color: colors.$main-background-dark;
+        color: colors.$font-color-dark;
+        border-radius: 8px;
+        max-width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        .journal-form {
+            display: block;
+            margin-bottom: 2rem;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #0c5c5e transparent;
+
+            form {
+                @include form-dark;
+            }
+        }
+    }
+}
+
+body.light {
+    background-color: colors.$main-background-light;
+    color: colors.$font-color-light;
+    .journal-create {
+        background-color: colors.$main-background-light;
+        color: colors.$font-color-light;
+
+        .journal-form {
+            form{
+                @include form-light;
+            }
+        }
+    }
+}

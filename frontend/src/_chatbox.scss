@@ -1,0 +1,18 @@
+@mixin chatbox-dark {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    justify-items: center;
+
+    .toggle-chat {
+        color: colors.$font-color-nav-dark;
+    }
+}
+
+@mixin chatbox-light {
+    .toggle-chat {
+        color: colors.$font-color-nav-light;
+    }
+}

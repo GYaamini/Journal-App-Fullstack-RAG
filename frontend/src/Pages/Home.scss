@@ -1,0 +1,107 @@
+@use '../colors';
+@import '../chatbox';
+
+body {
+    background-color: colors.$main-background-dark;
+    color: colors.$font-color-dark;
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+
+        .header {
+            align-self: center;
+            text-align: center;
+            top: 0;
+        }
+
+        .journal-container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            padding: auto 2rem;
+            justify-content: left;
+            margin-bottom: 2rem;
+            overflow-y: hidden;
+            
+            .journal-timeline{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+                margin-bottom: 2rem;
+                flex-shrink: 0;
+                overflow: auto;
+                scrollbar-width: none;
+                
+                .timeline-year {
+                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+                    margin-bottom: 0.5rem;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                    color: colors.$font-color-dark;
+                    
+                    &:hover {
+                        background-color: lighten(colors.$main-background-dark, 10%);
+                    }
+                    
+                    &.selected {
+                        font-weight: bold;
+                        color: colors.$font-color-dark;
+                    }
+                }
+            }
+        
+            .journal-list {
+                flex: 1;
+                justify-items: center;
+                padding: 3rem 2rem;
+                margin-bottom: 2rem;
+                border-radius: 8px;
+                overflow: auto;
+                scrollbar-width: none;
+            }
+
+            .chat-box {
+                @include chatbox-dark;
+            }
+        }
+    }
+
+    .wait {
+        position: relative;
+        margin: 5rem auto;
+    }
+}
+
+body.light {
+    background-color: colors.$main-background-light;
+    color: colors.$font-color-light;
+
+    .home{
+        .journal-container{
+            .timeline-year {
+                color: colors.$font-color-light;
+        
+                &:hover {
+                    background-color: darken(colors.$main-background-light, 10%);
+                }
+        
+                &.selected {
+                    color: colors.$font-color-light;
+                }
+            }
+            .chat-box {
+                @include chatbox-light;
+            }
+        }
+    }
+}
