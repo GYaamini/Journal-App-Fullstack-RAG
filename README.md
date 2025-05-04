@@ -7,12 +7,11 @@
 ---
 ## ✨ Features
 - **Conversational Journal Search** - Ask questions in natural language about past entries
-- **Smart Entry Organization** - Automatic semantic tagging and relationship mapping
-- **Rich Context Recall** - Answers grounded in your actual journal content
-- **Timeline** - Visualize your journal journey with dynamic year-timeline
+- **Specific Tag Search** - Retrieve journal entries with specific tag/tags
+- **Timeline** - Visualize Journal Journey with dynamic year-timeline
 - **CRUD Functionality** - Create, Manipulate, and Query journal entries
 - **CI/CD using GitHub Actions** - Containerized with **Docker** and Deployed on **Render** 
-- **Light and Dark Mode** - Enjoy a personalized user interface experience with light and dark mode options.
+- **Light and Dark Mode** - Personalized user interface experience with light and dark mode options.
 
 | Chatbox | Tag Search |
 | ------ | ------ |
@@ -36,7 +35,7 @@
 - FastAPI (Python ML Service)
 - LangChain (Document Processing)
 - ChromaDB (Vector Store)
-- Claude-3 Sonnet LLM(Conversational AI)
+- GPT-4o LLM(Conversational AI)
 
 ---
 ## ⚙️ Conversational RAG Architecture
@@ -77,7 +76,9 @@ J --> K[Contextual Answer]
         * For development BASE_URL, set VITE_BASE_URL = http://127.0.0.1:5000 under .env in the frontend root folder
         * For Vite, import statement: import.meta.env.VITE_BASE_URL
         * For production BASE_URL, set VITE_BASE_URL = https://repo-name.onrender.com under environmental variables on Render 
-    
+   
+   * Note:  'npm run build' command generated build output in '../backend/dist' folder, as backend is configured to serve React static files. Change output directory (outdir) if necessary.
+
     ```bash
     npm install
     npm run build
