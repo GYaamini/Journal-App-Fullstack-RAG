@@ -50,7 +50,7 @@ const Home = () => {
         setStore(prev => ({...prev, journalsListAll: data.journals}))
       }
 
-      console.log('hitting for /', endpoint.split('/')[3])
+      console.log('hitting for', endpoint.split('/api')[1])
     } catch(e) {
       console.error(e);
     }

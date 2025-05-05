@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import './CreateJournal.css'
 import { BASE_URL } from '../App'
 import { useStore } from '../StoreContext'
-import { handleSpaceDown, getTagsButton } from './UtilFunctions'
+import { handleSpaceDown, getTagsButton, handleAutoTagging } from '../Utils/UtilFunctions'
 
 const CreateJournal = () => {
     const { setIsStoreUpdated } = useStore()
@@ -11,6 +11,8 @@ const CreateJournal = () => {
     const tagsRef = useRef()
     const contentRef = useRef()
     const [tagsList, setTagsList] = useState([])
+    const [contentList, setContentList] = useState([])
+    const [lastIndex, setLastIndex] = useState(0)
 
     const handleSubmit = async(e) => {
         try {
@@ -89,6 +91,10 @@ const CreateJournal = () => {
                             placeholder="Write your thoughts here..."
                             required
                             ref={contentRef}
+                            onKeyDown={(e) => handleAutoTagging(
+                                e, contentRef, tagsList, setTagsList, 
+                                contentList, setContentList, lastIndex, setLastIndex
+                            )}
                         ></textarea>
                     </div>
 

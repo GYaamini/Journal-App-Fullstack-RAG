@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import JournalEntry from '../JournalEntry/JournalEntry'
-import { handleSpaceDown, getTagsButton } from './UtilFunctions'
+import { handleSpaceDown, getTagsButton } from '../Utils/UtilFunctions'
 import { useStore } from '../StoreContext'
 import './SearchJournal.css'
 import { BASE_URL } from '../App'

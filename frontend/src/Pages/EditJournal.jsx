@@ -3,7 +3,7 @@ import './EditJournal.css'
 import { useStore } from '../StoreContext'
 import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../App'
-import { handleSpaceDown, getTagsButton } from './UtilFunctions'
+import { handleSpaceDown, getTagsButton } from '../Utils/UtilFunctions'
 
 const EditJournal = () => {
     const { store, setIsStoreUpdated } = useStore()

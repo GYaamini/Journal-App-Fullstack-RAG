@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BiChat, BiChevronDown, BiRefresh, BiSend } from 'react-icons/bi'
 import './ChatBox.css'
-import {processQuery} from './PuterChat.js'
+import {processQuery} from '../Utils/ProcessQueries.js'
 import { useStore } from '../StoreContext.jsx'
 import { BASE_URL } from '../App.jsx'
 
@@ -9,7 +9,6 @@ const Chatbox = () => {
     const { store, setStore, isStoreUpdated } = useStore()
     const [isOpen, setIsOpen] = useState(false)
     const [input, setInput] = useState('')
-    const [loading, setLoading] =useState(false)
     const messageEndRef = useRef(null)
 
     const toggleChat = () => setIsOpen(!isOpen)

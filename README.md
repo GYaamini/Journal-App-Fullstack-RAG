@@ -8,6 +8,7 @@
 ## ✨ Features
 - **Conversational Journal Search** - Ask questions in natural language about past entries
 - **Specific Tag Search** - Retrieve journal entries with specific tag/tags
+- **Automatic Tag Suggestion** - Dynamically generates tags in real-time as the user types, using keyword extraction from the content input
 - **Timeline** - Visualize Journal Journey with dynamic year-timeline
 - **CRUD Functionality** - Create, Manipulate, and Query journal entries
 - **CI/CD using GitHub Actions** - Containerized with **Docker** and Deployed on **Render** 
