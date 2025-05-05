@@ -38,6 +38,9 @@
 - ChromaDB (Vector Store)
 - GPT-4o LLM(Conversational AI)
 
+### Keyword Extraction
+- GPT-4o LLM with Sonar-Reasoning as fallback model
+
 ---
 ## ⚙️ Conversational RAG Architecture
 ### RAG processing Journal data
