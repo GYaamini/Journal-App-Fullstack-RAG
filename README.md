@@ -34,7 +34,7 @@
 
 ### RAG Microservice
 - FastAPI (Python ML Service)
-- LangChain (Document Processing)
+- LangChain (Content Processing)
 - ChromaDB (Vector Store)
 - GPT-4o LLM(Conversational AI)
 
