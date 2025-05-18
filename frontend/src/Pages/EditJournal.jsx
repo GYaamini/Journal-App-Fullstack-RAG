@@ -3,7 +3,7 @@ import './EditJournal.css'
 import { useStore } from '../StoreContext'
 import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../App'
-import { handleSpaceDown, getTagsButton } from '../Utils/UtilFunctions'
+import { handleSpaceDown, getTagsButton, handleAutoTagging } from '../Utils/UtilFunctions'
 
 const EditJournal = () => {
     const { store, setIsStoreUpdated } = useStore()
@@ -13,6 +13,8 @@ const EditJournal = () => {
     const contentRef = useRef()
     const [tagsList, setTagsList] = useState([])
     const navigate = useNavigate()
+    const [contentList, setContentList] = useState([])
+    const [lastIndex, setLastIndex] = useState(0)
 
     const journal = store.journalEdit
 
@@ -101,6 +103,10 @@ const EditJournal = () => {
                             placeholder="Write your thoughts here..."
                             required
                             ref={contentRef}
+                            onKeyDown={(e) => handleAutoTagging(
+                                e, contentRef, tagsList, setTagsList, 
+                                contentList, setContentList, lastIndex, setLastIndex
+                            )}
                         ></textarea>
                     </div>
 

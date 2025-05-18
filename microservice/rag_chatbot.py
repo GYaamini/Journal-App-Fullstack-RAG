@@ -31,7 +31,7 @@ def process_data(texts: List[str]):
             title = lines[0].replace("Title: ", "").strip()
             date = lines[1].replace("Date: ", "").strip()
             tags = lines[2].replace("Tags: ", "").strip().split(",")
-            content = "\n".join(lines[4:])  # Skip "Content:" line and blank line
+            content = "\n".join(lines[4:])
 
             tags_str = ", ".join(tags)
             
